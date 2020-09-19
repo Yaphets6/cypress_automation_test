@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-09-17T14:14:58.699Z",
+    "end": "2020-09-17T14:15:02.029Z",
+    "duration": 3330,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f8d09b2c-25c4-4738-83b6-78a8fdd1de84",
+      "title": "",
+      "fullFile": "test_case\\pc\\design\\runCase.js",
+      "file": "test_case\\pc\\design\\runCase.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9d84766-f570-4720-9343-b6fa74310d86",
+          "title": "云设计中心_工作台",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "编辑空间",
+              "fullTitle": "云设计中心_工作台 编辑空间",
+              "timedOut": null,
+              "duration": 1370,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "serverCookie.setDesignCookie('qysj1', '123456', 2);\nvisitDesign.visitDesignPage('/#/main/app/myApp');\ntopBar.operationSpace('后台新增回测1', 'spaceEdit');\ncy.wait(3000);",
+              "err": {
+                "message": "TypeError: topBar.operationSpace is not a function",
+                "estack": "TypeError: topBar.operationSpace is not a function\n    at Context.eval (http://localhost:55547/__cypress/tests?p=test_case\\pc\\design\\runCase.js:2528:12)",
+                "diff": null
+              },
+              "uuid": "ae978257-e626-419e-b856-96c3b430cbbd",
+              "parentUUID": "e9d84766-f570-4720-9343-b6fa74310d86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "空用例",
+              "fullTitle": "云设计中心_工作台 空用例",
+              "timedOut": null,
+              "duration": 1664,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "serverCookie.setDesignCookie('qysj1', '123456', 2);\nvisitDesign.visitDesignPage('/#/main/app/myApp');\ncy.log('执行空用例');",
+              "err": {
+                "message": "TypeError: Cannot read property 'token' of null",
+                "estack": "TypeError: Cannot read property 'token' of null\n    at Object.eval (http://localhost:55547/__cypress/tests?p=test_case\\pc\\design\\runCase.js:2285:66)\n    at executeFn (http://localhost:55547/__cypress/tests?p=cypress\\support\\index.js:1032:22)\n    at Context.eval (http://localhost:55547/__cypress/tests?p=cypress\\support\\index.js:1045:12)",
+                "diff": null
+              },
+              "uuid": "c110d07c-d07d-4f3a-9ad1-f2f394009650",
+              "parentUUID": "e9d84766-f570-4720-9343-b6fa74310d86",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ae978257-e626-419e-b856-96c3b430cbbd",
+            "c110d07c-d07d-4f3a-9ad1-f2f394009650"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3034,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "single_json_report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "test_reports",
+        "reportFilename": "single_json_report",
+        "timestamp": "isoDateTime"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

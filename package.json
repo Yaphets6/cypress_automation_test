@@ -1,0 +1,28 @@
+{
+  "name": "cypress_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "node src/scripts/caseRunner.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.9.0",
+    "cypress-file-upload": "^4.0.7",
+    "cypress-iframe": "^1.0.1",
+    "fs-extra": "^9.0.1",
+    "jquery": "^3.5.1",
+    "mocha": "^5.2.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "dependencies": {
+    "cypress-commands": "^1.1.0",
+    "dateformat": "^3.0.3"
+  }
+}

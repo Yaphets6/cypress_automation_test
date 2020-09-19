@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-17T14:13:55.278Z",
+    "end": "2020-09-17T14:14:39.783Z",
+    "duration": 44505,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5e842e94-8e0a-40b5-bfd2-ba181e350f4a",
+      "title": "",
+      "fullFile": "test_case\\pc\\design\\info_check_test.js",
+      "file": "test_case\\pc\\design\\info_check_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1a0d20aa-5b55-4d21-99bc-3640e5469840",
+          "title": "登录云设计校验",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "单位未生成云联证书，人员有云设计权限",
+              "fullTitle": "登录云设计校验 单位未生成云联证书，人员有云设计权限",
+              "timedOut": null,
+              "duration": 22969,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/**\n * 步骤1：调用登录接口，设置cookie\n * 数据1：hksyb,82602233\n * 步骤2：打开云设计首页\n * 期望结果：弹窗提示“请先生成云联证书”\n */\nserverCookie.setDesignCookie('hksyb', '82602233');\ncy.server();\ncy.route({\n  url: '/designCenter/home/preLoginUser',\n  method: 'GET'\n}).as('response');\ndesign_visit_page.visitDesignPage();\ncy.wait('@response').its('responseBody').then(function (body) {\n  expect(body.code).to.eql('500');\n  expect(body.message).to.eql('请先生成云联证书！');\n}); // cy.get('alert').should('have.text','请先生成云联证书！')\n// cy.get('div#not-generate-certify').find('div.desc-tit')\n// .should('have.text','所在单位未生成云联证书');",
+              "err": {},
+              "uuid": "326ddc8c-4347-49c9-81e7-b95bfc6aa75a",
+              "parentUUID": "1a0d20aa-5b55-4d21-99bc-3640e5469840",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "单位已生成证书，人员无云设计权限",
+              "fullTitle": "登录云设计校验 单位已生成证书，人员无云设计权限",
+              "timedOut": null,
+              "duration": 5777,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/**\n * 步骤1.调用登录接口，设置cookie\n * 数据1：18968067644\n * 期望结果：获取用户信息接口报错\n */\nserverCookie.setDesignCookieByMobile('18782006518');\ncy.server();\ncy.route({\n  url: '/designCenter/home/preLoginUser',\n  method: 'get'\n}).as('userInfo');\ndesign_visit_page.visitDesignPage();\ncy.wait('@userInfo').its('responseBody').its('code').should('eql', '500');",
+              "err": {},
+              "uuid": "0f8cfcfa-21e6-44e7-903c-0e08a867ab6d",
+              "parentUUID": "1a0d20aa-5b55-4d21-99bc-3640e5469840",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "单位生成证书，人员有云设计权限",
+              "fullTitle": "登录云设计校验 单位生成证书，人员有云设计权限",
+              "timedOut": null,
+              "duration": 6676,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/**\n  * 步骤1：调用登录接口，设置cookie\n  * 数据1：13600000000\n  * 期望结果：能打开云设计首页\n*/\nserverCookie.setDesignCookieByMobile('13600000000');\ndesign_visit_page.visitDesignPage();\nvar currentSpace = work_space_page.getCurrentSpace();\ncy.get(currentSpace).should('contain', '重庆区');",
+              "err": {},
+              "uuid": "ce661b15-8caf-4060-93eb-2322c053b627",
+              "parentUUID": "1a0d20aa-5b55-4d21-99bc-3640e5469840",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "326ddc8c-4347-49c9-81e7-b95bfc6aa75a",
+            "0f8cfcfa-21e6-44e7-903c-0e08a867ab6d",
+            "ce661b15-8caf-4060-93eb-2322c053b627"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35422,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "single_json_report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "test_reports",
+        "reportFilename": "single_json_report",
+        "timestamp": "isoDateTime"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

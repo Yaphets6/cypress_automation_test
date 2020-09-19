@@ -1,0 +1,34 @@
+{
+"reporter": "mochawesome",
+"reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "reportDir":"test_reports",
+    "reportFilename": "single_json_report",
+    "timestamp":"isoDateTime"
+    },
+  "scripts": {
+  },
+  "integrationFolder":"test_case",
+  "video":true,
+  "chromeWebSecurity":false,
+  "experimentalSourceRewriting":false,
+  "env":{
+    "evnType":"vprod",
+    "cloud":"cloud.seeyon.com",
+    "chome":"chome.seeyon.com",
+    "cmanager":"cmanager.seeyon.com",
+    "design":"dcc.seeyon.com",
+    "boss":"boss.seeyoncloud.com",
+    "http":"https://"
+  },
+  "watchForFileChanges":true,
+  "pageLoadTimeout":120000,
+  "requestTimeout":15000,
+  "screenshotsFolder":"test_screenshots",
+  "fixturesFolder":"test_data",
+  "videosFolder":"test_videos",
+  "testFiles":"**/*.*"
+
+}

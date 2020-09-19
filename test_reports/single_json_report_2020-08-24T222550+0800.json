@@ -1,0 +1,269 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 6,
+    "failures": -4,
+    "start": "2020-08-24T14:24:37.620Z",
+    "end": "2020-08-24T14:25:50.678Z",
+    "duration": 73058,
+    "testsRegistered": 9,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 66.66666666666666,
+    "other": 6,
+    "hasOther": true,
+    "skipped": 6,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ce0af539-4e72-475a-8982-135c3a07335e",
+      "title": "",
+      "fullFile": "cypress\\testCase\\pc\\design\\runCase.js",
+      "file": "cypress\\testCase\\pc\\design\\runCase.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5469c0f1-9509-4605-af40-47045e82de1d",
+          "title": "云设计中心_工作台",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "登录cloud",
+              "fullTitle": "云设计中心_工作台 登录cloud",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "943950b2-a8d1-49a5-aad6-df3c9c23d408",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "找回密码",
+              "fullTitle": "云设计中心_工作台 找回密码",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "aa1c523a-e7ae-4ffa-8260-e60cc4535844",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "注册账号",
+              "fullTitle": "云设计中心_工作台 注册账号",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1665c709-14a1-44ac-ac77-ba722d9e87c7",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "切换顶部导航菜单",
+              "fullTitle": "云设计中心_工作台 切换顶部导航菜单",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "867a3800-fa57-4c40-9cd7-dad19842bebf",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "编辑空间",
+              "fullTitle": "云设计中心_工作台 编辑空间",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "cd455921-6778-4306-a0f3-818bb0f1769c",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "新建空白应用",
+              "fullTitle": "云设计中心_工作台 新建空白应用",
+              "timedOut": null,
+              "duration": 24368,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "serverCookie.setCloudCookie('qysj1', '123456', 2);\ndesignMain.visitDesignPage('/#/main/app/myApp');\ndesignMain.addNewApp('新增业务包', 'testData/picture/portal.jpg', 'testData/picture/背景图1.jpg');\ncy.wait(3000);",
+              "err": {
+                "message": "CypressError: `base64StringToBlob()` no longer returns a `Promise`. Update the use of `base64StringToBlob()` to expect a returned `Blob`.\n\nhttps://on.cypress.io/migration-guide",
+                "estack": "CypressError: `base64StringToBlob()` no longer returns a `Promise`. Update the use of `base64StringToBlob()` to expect a returned `Blob`.\n\nhttps://on.cypress.io/migration-guide\n    at Blob.val.then (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:180527:71)\n    at getRet (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:154850:20)\n    at tryCatcher (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:9852:23)\n    at Function.Promise.attempt.Promise.try (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:7126:29)\n    at Object.thenFn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:154868:26)\n    at Object.then [as fn] (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:155308:21)\n    at originalFn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:167524:26)\n    at Context.overridden.fn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:167535:17)\n    at Context.<anonymous> (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:168808:21)\nFrom Your Spec Code:\n    at Object.eval (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\support\\index.js:997:4857)\n    at executeFn (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\support\\index.js:627:22)\n    at Context.eval (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\support\\index.js:640:12)",
+                "diff": null
+              },
+              "uuid": "4aa8c5e5-216c-4a8b-9cbf-32c09a4e35e8",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "新建业务包_从本地导入",
+              "fullTitle": "云设计中心_工作台 新建业务包_从本地导入",
+              "timedOut": null,
+              "duration": 15148,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "serverCookie.setCloudCookie('qysj1', '123456', 2);\ndesignMain.visitDesignPage('/#/main/app/myApp');\ndesignMain.addAppLocalUpload('testData/syz/80业务包表单.syz');\ncy.wait(5000);",
+              "err": {
+                "message": "CypressError: `binaryStringToBlob()` no longer returns a `Promise`. Update the use of `binaryStringToBlob()` to expect a returned `Blob`.\n\nhttps://on.cypress.io/migration-guide",
+                "estack": "CypressError: `binaryStringToBlob()` no longer returns a `Promise`. Update the use of `binaryStringToBlob()` to expect a returned `Blob`.\n\nhttps://on.cypress.io/migration-guide\n    at Blob.val.then (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:180527:71)\n    at Blob.tryCatcher (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:9852:23)\n    at doThenable (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:9470:38)\n    at tryConvertToPromise (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:9435:20)\n    at Promise._resolveCallback (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:7706:24)\n    at Promise._resolveFromSyncValue (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:7139:14)\n    at Function.Promise.attempt.Promise.try (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:7131:9)\n    at Object.thenFn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:154868:26)\n    at Object.then [as fn] (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:155308:21)\n    at originalFn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:167524:26)\n    at Context.overridden.fn (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:167535:17)\n    at Context.<anonymous> (https://testdcc.seeyon.com/__cypress/runner/cypress_runner.js:168808:21)\nFrom Your Spec Code:\n    at Object.file_upload (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\testCase\\pc\\design\\runCase.js:259:36)\n    at main.addAppLocalUpload (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\testCase\\pc\\design\\runCase.js:1278:13)\n    at Context.eval (https://testdcc.seeyon.com/__cypress/tests?p=cypress\\testCase\\pc\\design\\runCase.js:1401:16)",
+                "diff": null
+              },
+              "uuid": "16fb0a2f-ab23-4eac-a7f2-132978e75f9f",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "新建空白业务包",
+              "fullTitle": "云设计中心_工作台 新建空白业务包",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "57b3f46a-f408-416e-aa60-182f71ee9308",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "编辑业务包_design",
+              "fullTitle": "云设计中心_工作台 编辑业务包_design",
+              "timedOut": null,
+              "duration": 26282,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "serverCookie.setCloudCookie('qysj1', '123456', 2);\ndesignMain.visitDesignPage('/#/main/app/myApp');\nserverCookie.setV5Cookie();\ndesignMain.editApp('合同管理（标准版）V42');\ncy.wait(3000);",
+              "err": {},
+              "uuid": "50ee4099-ca09-4a97-ba39-0b47d36b434f",
+              "parentUUID": "5469c0f1-9509-4605-af40-47045e82de1d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "50ee4099-ca09-4a97-ba39-0b47d36b434f"
+          ],
+          "failures": [
+            "4aa8c5e5-216c-4a8b-9cbf-32c09a4e35e8",
+            "16fb0a2f-ab23-4eac-a7f2-132978e75f9f"
+          ],
+          "pending": [
+            "943950b2-a8d1-49a5-aad6-df3c9c23d408",
+            "aa1c523a-e7ae-4ffa-8260-e60cc4535844",
+            "1665c709-14a1-44ac-ac77-ba722d9e87c7",
+            "867a3800-fa57-4c40-9cd7-dad19842bebf",
+            "cd455921-6778-4306-a0f3-818bb0f1769c",
+            "57b3f46a-f408-416e-aa60-182f71ee9308"
+          ],
+          "skipped": [],
+          "duration": 65798,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "single_json_report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "test_reports",
+        "reportFilename": "single_json_report",
+        "timestamp": "isoDateTime"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
