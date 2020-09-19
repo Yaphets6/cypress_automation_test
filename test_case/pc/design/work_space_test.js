@@ -91,7 +91,7 @@ describe('工作台',function(){
 
             set_cookie.setDesignCookie('yangyk','123456')
             design_visit_page.visitDesignPage()
-            work_space_page.addSpace('cypress新增空间002','单位自用',['建筑业','其他'])
+            work_space_page.addSpace('cypress新增空间001','单位自用',['建筑业','其他'])
             work_space_page.mouseEnterCurrentSpace();
             cy.get(`${work_space_page.spaceList}`).contains('cypress新增空间001')
         })
@@ -109,7 +109,7 @@ describe('工作台',function(){
 
             set_cookie.setDesignCookie('yangyk','123456')
             design_visit_page.visitDesignPage()
-            work_space_page.addSpace('cypress新增空间002','单位自用',['多元化集团'])
+            work_space_page.addSpace('cypress新增空间001','单位自用',['多元化集团'])
             cy.get('@addSpace').its('responseBody').then((body)=>{
                 expect(body.code).to.eql('500')
                 expect(body.message).to.eql('空间名称重复')
@@ -128,13 +128,13 @@ describe('工作台',function(){
              * 数据1：yangyk，123456
              * 步骤2：打开云设计首页
              * 步骤3：编辑空间
-             * 数据：空间名【被编辑的空间数据】,空间类型【项目】，标签[制造业，批发零售业，财务管理],新空间名【编辑后空间】
+             * 数据：空间名【编辑前空间】,空间类型【项目】，标签[制造业，批发零售业，财务管理],新空间名【编辑后空间】
              * 
              * 期望结果：空间列表显示空间【编辑后空间】，打开空间弹窗，空间类型为【项目】
              */
             set_cookie.setDesignCookie('yangyk','123456')
             design_visit_page.visitDesignPage();
-            work_space_page.editSpace('编辑后空间','项目',['制造业','批发零售业','财务管理'],'编辑后空间');
+            work_space_page.editSpace('编辑前空间','项目',['制造业','批发零售业','财务管理'],'编辑后空间');
             work_space_page.operationSpace('编辑后空间','spaceEdit');
             cy.get(radio.getRaidoEl('项目')).then(($el)=>{
                 expect($el.attr('value')).to.eql('0');
@@ -175,7 +175,7 @@ describe('工作台',function(){
             
         })
 
-        it.only('删除非本人新建空间',function(){
+        it('删除非本人新建空间',function(){
             /**
              * 步骤1：调用登录接口，设置cookie
              * 数据1：tly，82602233
@@ -192,7 +192,7 @@ describe('工作台',function(){
                 url:'/designCenter/space/deleteBySpaceId*',
                 method:'GET'
             }).as('delSpace')
-            work_space_page.operationSpace('cypress新增空间002','spaceDel')
+            work_space_page.operationSpace('cypress新增空间001','spaceDel')
             dialog.clickAntModalFooterButton('提示','确 定');
             cy.wait('@delSpace').its('responseBody').then((body)=>{
                 expect(body.code).to.eql('500');

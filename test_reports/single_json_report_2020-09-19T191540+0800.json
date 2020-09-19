@@ -1,0 +1,150 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-19T11:14:59.234Z",
+    "end": "2020-09-19T11:15:40.699Z",
+    "duration": 41465,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5e1d87ab-1908-4fd4-a021-831944cdff75",
+      "title": "",
+      "fullFile": "test_case\\pc\\design\\info_check_test.js",
+      "file": "test_case\\pc\\design\\info_check_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "196617de-9270-4bea-9d34-979558513a3b",
+          "title": "登录云设计校验",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "单位未生成云联证书，人员有云设计权限",
+              "fullTitle": "登录云设计校验 单位未生成云联证书，人员有云设计权限",
+              "timedOut": null,
+              "duration": 24487,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/**\n * 步骤1：调用登录接口，设置cookie\n * 数据1：hksyb,82602233\n * 步骤2：打开云设计首页\n * 期望结果：弹窗提示“请先生成云联证书”\n */\nserverCookie.setDesignCookie('hksyb', '82602233');\ncy.server();\ncy.route({\n  url: '/designCenter/home/preLoginUser',\n  method: 'GET'\n}).as('response');\ndesign_visit_page.visitDesignPage();\ncy.wait('@response').its('responseBody').then(function (body) {\n  expect(body.code).to.eql('500');\n  expect(body.message).to.eql('请先生成云联证书！');\n}); // cy.get('alert').should('have.text','请先生成云联证书！')\n// cy.get('div#not-generate-certify').find('div.desc-tit')\n// .should('have.text','所在单位未生成云联证书');",
+              "err": {},
+              "uuid": "c1b8ae55-4483-4696-9182-c62a653d7937",
+              "parentUUID": "196617de-9270-4bea-9d34-979558513a3b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "单位已生成证书，人员无云设计权限",
+              "fullTitle": "登录云设计校验 单位已生成证书，人员无云设计权限",
+              "timedOut": null,
+              "duration": 2900,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "/**\n * 步骤1.调用登录接口，设置cookie\n * 数据1：18968067644\n * 期望结果：获取用户信息接口报错\n */\nserverCookie.setDesignCookieByMobile('18782006518');\ncy.server();\ncy.route({\n  url: '/designCenter/home/preLoginUser',\n  method: 'get'\n}).as('userInfo');\ndesign_visit_page.visitDesignPage();\ncy.wait('@userInfo').its('responseBody').its('code').should('eql', '500');",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://vprodcloud.seeyon.com/commonapi/auth/sendSmsCode\n\nThe response we received from your web server was:\n\n  > 500: Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://vprodcloud.seeyon.com/commonapi/auth/sendSmsCode\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/4.9.0 Chrome/80.0.3987.165 Electron/8.3.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 100\n}\nBody: {\"type\":\"login\",\"param\":\"18782006518\",\"imgCode\":\"0032\",\"codeKey\":\"8a67fdca4d7ce169458e9ecc06cfbe59\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Server Error\nHeaders: {\n  \"server\": \"CloudWAF\",\n  \"date\": \"Sat, 19 Sep 2020 11:15:33 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"set-cookie\": [\n    \"HWWAFSESID=60432735ef2d474fa3; path=/\",\n    \"HWWAFSESTIME=1600514133054; path=/\"\n  ],\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\"\n}\nBody: {\n  \"code\": 500,\n  \"message\": \"已超过最大次数啦，请明天再试\",\n  \"data\": null\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://vprodcloud.seeyon.com/commonapi/auth/sendSmsCode\n\nThe response we received from your web server was:\n\n  > 500: Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://vprodcloud.seeyon.com/commonapi/auth/sendSmsCode\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/4.9.0 Chrome/80.0.3987.165 Electron/8.3.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 100\n}\nBody: {\"type\":\"login\",\"param\":\"18782006518\",\"imgCode\":\"0032\",\"codeKey\":\"8a67fdca4d7ce169458e9ecc06cfbe59\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Server Error\nHeaders: {\n  \"server\": \"CloudWAF\",\n  \"date\": \"Sat, 19 Sep 2020 11:15:33 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"set-cookie\": [\n    \"HWWAFSESID=60432735ef2d474fa3; path=/\",\n    \"HWWAFSESTIME=1600514133054; path=/\"\n  ],\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"cache-control\": \"no-cache, no-store, max-age=0, must-revalidate\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"0\"\n}\nBody: {\n  \"code\": 500,\n  \"message\": \"已超过最大次数啦，请明天再试\",\n  \"data\": null\n}\n\n\nhttps://on.cypress.io/request\n    at https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:157556:21\n    at tryCatcher (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:10161:23)\n    at Promise._settlePromiseFromHandler (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:8096:31)\n    at Promise._settlePromise (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:8153:18)\n    at Promise._settlePromise0 (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:8198:10)\n    at Promise._settlePromises (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:8278:18)\n    at _drainQueueStep (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:4868:12)\n    at _drainQueue (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:4861:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:4877:5)\n    at Async.drainQueues (https://vproddcc.seeyon.com/__cypress/runner/cypress_runner.js:4747:14)\nFrom Your Spec Code:\n    at code.getMobileCode (https://vproddcc.seeyon.com/__cypress/tests?p=test_case\\pc\\design\\info_check_test.js:989:10)\n    at Object.eval (https://vproddcc.seeyon.com/__cypress/tests?p=test_case\\pc\\design\\info_check_test.js:1023:30)\n    at executeFn (https://vproddcc.seeyon.com/__cypress/tests?p=cypress\\support\\index.js:1032:22)\n    at Context.eval (https://vproddcc.seeyon.com/__cypress/tests?p=cypress\\support\\index.js:1045:12)",
+                "diff": null
+              },
+              "uuid": "96cf4bd2-4cf4-47af-b90b-36ca0fc7f070",
+              "parentUUID": "196617de-9270-4bea-9d34-979558513a3b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "单位生成证书，人员有云设计权限",
+              "fullTitle": "登录云设计校验 单位生成证书，人员有云设计权限",
+              "timedOut": null,
+              "duration": 5840,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/**\n  * 步骤1：调用登录接口，设置cookie\n  * 数据1：cy,82602233\n  * 期望结果：能打开云设计首页\n*/\nserverCookie.setDesignCookie('cy', '82602233');\ndesign_visit_page.visitDesignPage();\nvar currentSpace = work_space_page.getCurrentSpace();\ncy.get(currentSpace).should('contain', '川渝区');",
+              "err": {},
+              "uuid": "3abaee24-a37e-447a-9eac-44b7be850108",
+              "parentUUID": "196617de-9270-4bea-9d34-979558513a3b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c1b8ae55-4483-4696-9182-c62a653d7937",
+            "3abaee24-a37e-447a-9eac-44b7be850108"
+          ],
+          "failures": [
+            "96cf4bd2-4cf4-47af-b90b-36ca0fc7f070"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 33227,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "single_json_report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "test_reports",
+        "reportFilename": "single_json_report",
+        "timestamp": "isoDateTime"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
