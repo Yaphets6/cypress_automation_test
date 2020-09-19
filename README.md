@@ -12,3 +12,5 @@
 步骤4：启动cypress
 （1）powershell——》切到项目更目录
 （2）执行命令：npm run cypress:open。将打开cypress窗口。
+（3）执行用例：npm run cypress:run。控制台将输出用例执行情况。
+
