@@ -16,11 +16,11 @@
   "experimentalSourceRewriting":false,
   "env":{
     "evnType":"vprod",
-    "cloud":"cloud.seeyon.com",
-    "chome":"chome.seeyon.com",
-    "cmanager":"cmanager.seeyon.com",
-    "design":"dcc.seeyon.com",
-    "boss":"boss.seeyoncloud.com",
+    "cloud":"xxx.xxx.xxx",
+    "chome":"xxx.xxx.xxx",
+    "cmanager":"xxx.xxx.xxx",
+    "design":"xxx.xxx.xxx",
+    "boss":"xxx.xxx.xxx",
     "http":"https://"
   },
   "watchForFileChanges":true,
